@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 
-import Navbar from "./common/nav-bar";
+import Navbar from "./common/nav-bar/nav-bar";
 
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";

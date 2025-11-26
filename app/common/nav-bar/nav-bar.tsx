@@ -1,23 +1,28 @@
 "use client";
 import { IoMdRestaurant } from "react-icons/io";
-import "../style/navbar.css";
 import { BsFillBrightnessHighFill } from "react-icons/bs";
 import { useTheme } from "next-themes";
+
+import styles from "./nav-bar.module.css";
+
+const { navBar, lang, logo, btnLogin, btnRegister } = styles;
+
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
+
   return (
-    <nav className="nav-bar w-100">
+    <nav className={`${navBar} w-100`}>
       <div className="container d-flex justify-content-between">
         <div>
-          <BsFillBrightnessHighFill onClick={toggleTheme} className="lang" />
-          <button className="btn-login">login</button>
-          <button className="btn-register">signup</button>
+          <IoMdRestaurant className={logo} />
         </div>
         <div>
-          <IoMdRestaurant className="logo" />
+          <BsFillBrightnessHighFill onClick={toggleTheme} className={lang} />
+          <button className={btnLogin}>login</button>
+          <button className={btnRegister}>signup</button>
         </div>
       </div>
     </nav>
