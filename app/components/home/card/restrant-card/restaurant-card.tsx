@@ -1,11 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
 import styles from "./restrant-card.module.css";
 import Rating from "@/common/Rating/Rating";
+import { BiSolidCity } from "react-icons/bi";
 
 const { cardContainer, rate } = styles;
 
-const RestrantCard = () => {
+const RestaurantCard = () => {
   return (
     <div className={`card ${cardContainer} mb-3`}>
       <Image
@@ -19,11 +19,11 @@ const RestrantCard = () => {
         <h5 className="card-title text-center">Restaurant Name</h5>
         <div className="d-flex justify-content-center">
           <div className="d-flex justify-content-center">
-            <Rating />
+            <Rating readOnly />
             <p className={`mx-1 mt-1 ${rate}`}>4 Ratings</p>
           </div>
           <div className="d-flex mt-1 ms-3">
-            {/* <BiSolidCity className="rate me-1" /> */}
+            <BiSolidCity className="rate me-1" />
             <p className="rate">Cairo</p>
           </div>
         </div>
@@ -33,4 +33,4 @@ const RestrantCard = () => {
   );
 };
 
-export default RestrantCard;
+export default RestaurantCard;
