@@ -20,7 +20,7 @@
   color: var(--logo-color);
 }
 
-button {
+.btn {
   margin-top: 8px !important;
   color: var(--foreground);
   border-radius: 5px;

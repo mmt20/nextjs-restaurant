@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 
 import styles from "./nav-bar.module.css";
 
-const { navBar, lang, logo, btnLogin, btnRegister } = styles;
+const { navBar, lang, logo, btn, btnLogin, btnRegister } = styles;
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
@@ -21,8 +21,8 @@ const Navbar = () => {
         </div>
         <div>
           <BsFillBrightnessHighFill onClick={toggleTheme} className={lang} />
-          <button className={btnLogin}>login</button>
-          <button className={btnRegister}>signup</button>
+          <button className={`${btn} ${btnLogin}`}>login</button>
+          <button className={`${btn} ${btnRegister}`}>signup</button>
         </div>
       </div>
     </nav>
