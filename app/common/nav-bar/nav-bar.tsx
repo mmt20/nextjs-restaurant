@@ -4,6 +4,7 @@ import { BsFillBrightnessHighFill } from "react-icons/bs";
 import { useTheme } from "next-themes";
 
 import styles from "./nav-bar.module.css";
+import Link from "next/link";
 
 const { navBar, lang, logo, btn, btnLogin, btnRegister } = styles;
 
@@ -16,9 +17,10 @@ const Navbar = () => {
   return (
     <nav className={`${navBar} w-100`}>
       <div className="container d-flex justify-content-between">
-        <div>
+        <Link href={"/"} style={{ textDecoration: "none" }}>
           <IoMdRestaurant className={logo} />
-        </div>
+        </Link>
+
         <div>
           <BsFillBrightnessHighFill onClick={toggleTheme} className={lang} />
           <button className={`${btn} ${btnLogin}`}>login</button>

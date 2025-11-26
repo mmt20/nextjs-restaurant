@@ -1,0 +1,89 @@
+.bookContainer {
+  box-shadow: 0 0 10px 0 rgba(134, 134, 134, 0.2);
+  width: 350px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: var(--card-background);
+  color: var(--title-color);
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-left: 8px;
+}
+@media only screen and (max-width: 600px) {
+  .book-container {
+    width: 100%;
+  }
+}
+
+/* Dark Mode DatePicker Styles */
+.darkDatepicker {
+  background-color: #151818 !important;
+  border-color: #333 !important;
+}
+
+.darkDatepicker :global(.react-datepicker__header) {
+  background-color: #1a1a1a;
+  border-bottom-color: #333;
+}
+
+.darkDatepicker :global(.react-datepicker__current-month),
+.darkDatepicker :global(.react-datepicker__day-name),
+.darkDatepicker :global(.react-datepicker-time__header) {
+  color: white;
+}
+
+.darkDatepicker :global(.react-datepicker__day) {
+  color: white;
+}
+
+.darkDatepicker :global(.react-datepicker__day:hover) {
+  background-color: #333;
+}
+
+.darkDatepicker :global(.react-datepicker__day--selected),
+.darkDatepicker :global(.react-datepicker__day--keyboard-selected) {
+  background-color: #e83249;
+  color: white;
+}
+
+.darkDatepicker :global(.react-datepicker__day--disabled) {
+  color: #666;
+}
+
+.darkDatepicker :global(.react-datepicker__time-container) {
+  border-left-color: #333;
+}
+
+.darkDatepicker :global(.react-datepicker__time) {
+  background-color: #151818;
+}
+
+.darkDatepicker :global(.react-datepicker__time-box) {
+  background-color: #151818;
+}
+
+.darkDatepicker :global(.react-datepicker__time-list-item) {
+  color: white;
+}
+
+.darkDatepicker :global(.react-datepicker__time-list-item:hover) {
+  background-color: #333 !important;
+}
+
+.darkDatepicker :global(.react-datepicker__time-list-item--selected) {
+  background-color: #e83249 !important;
+  color: white !important;
+}
+
+.darkDatepicker :global(.react-datepicker__triangle::before),
+.darkDatepicker :global(.react-datepicker__triangle::after) {
+  border-bottom-color: #1a1a1a !important;
+}
+
+.darkDatepicker :global(.react-datepicker__navigation-icon::before) {
+  border-color: white;
+}
+
+.darkDatepicker :global(.react-datepicker__month-container) {
+  background-color: #151818;
+}

@@ -1,4 +1,4 @@
-import RestrantCard from "./restrant-card/restaurant-card";
+import RestrantCard from "./restaurant-card/restaurant-card";
 
 const CardList = () => {
   return (
