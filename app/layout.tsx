@@ -6,6 +6,7 @@ import Navbar from "./common/nav-bar/nav-bar";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import DarkMode from "./utils/dark-mode";
+import Footer from "./common/footer/footer";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -24,10 +25,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${lato.variable} `}>
+      <body className={lato.variable} suppressHydrationWarning>
         <DarkMode>
           <Navbar />
           {children}
+          <Footer />
         </DarkMode>
       </body>
     </html>
