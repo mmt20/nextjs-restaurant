@@ -1,7 +1,11 @@
+import Search from "@/components/home/search/search";
+
 export default function Home() {
   return (
     <div>
-      <main>HEllo</main>
+      <main>
+        <Search />
+      </main>
     </div>
   );
 }
