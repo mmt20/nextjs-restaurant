@@ -1,0 +1,27 @@
+:global(.swiper) {
+  width: 100%;
+  height: 400px;
+}
+
+:global(.swiper-slide) {
+  text-align: center;
+  font-size: 18px;
+  background: var(--card-background);
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:global(.swiper-slide img) {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+:global(.swiper-button-next),
+:global(.swiper-button-prev) {
+  color: #fff !important;
+}

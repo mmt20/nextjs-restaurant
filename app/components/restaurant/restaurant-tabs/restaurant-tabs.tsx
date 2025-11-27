@@ -1,19 +1,23 @@
 "use client";
 import { Tab, Tabs } from "react-bootstrap";
 import RestaurantOverview from "../restaurant-overview/restaurant-overview";
+import RestaurantSlider from "../restaurant-slider/restaurant-slider";
 
-import styles from "./restaurant-details.module.css";
+import styles from "./restaurant-tabs.module.css";
+import RestaurantMenu from "../restaurant-menu/restaurant-menu";
 const { detailsContainer, tabs } = styles;
 
-const RestaurantDetails = () => {
+const RestaurantTabs = () => {
   return (
     <div className={`${detailsContainer} mb-5`}>
       <Tabs defaultActiveKey="about" id="restaurant-tab" className={tabs} fill>
         <Tab eventKey="menu" title="Menu">
-          Menu Content
+          <RestaurantMenu />
+          <RestaurantMenu />
+          <RestaurantMenu />
         </Tab>
         <Tab eventKey="images" title="Images">
-          Images Content
+          <RestaurantSlider />
         </Tab>
         <Tab eventKey="about" title="About">
           <RestaurantOverview />
@@ -23,4 +27,4 @@ const RestaurantDetails = () => {
   );
 };
 
-export default RestaurantDetails;
+export default RestaurantTabs;

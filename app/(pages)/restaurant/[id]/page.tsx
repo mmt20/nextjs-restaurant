@@ -1,5 +1,5 @@
 import BookDate from "@/components/restaurant/book-date/book-date";
-import RestaurantDeatils from "@/components/restaurant/restaurant-details/restaurant-details";
+import RestaurantDeatils from "@/components/restaurant/restaurant-tabs/restaurant-tabs";
 import RestaurantHeader from "@/components/restaurant/restaurant-header/restaurant-header";
 
 const RestaurantPage = () => {

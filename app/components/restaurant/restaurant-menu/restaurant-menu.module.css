@@ -1,0 +1,20 @@
+.price {
+  background-color: #e83249 !important;
+  padding: 5px !important;
+  border-radius: 5px !important;
+  color: white !important;
+  margin-left: 10px !important;
+}
+
+.menuItem {
+  text-align: left !important;
+  margin-bottom: 10px !important;
+  margin-top: 10px !important;
+}
+
+.line {
+  margin-top: 10px !important;
+  height: 2px !important;
+  background-color: #e83249 !important;
+  width: 100% !important;
+}
