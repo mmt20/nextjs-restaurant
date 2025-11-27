@@ -18,7 +18,7 @@ const BookDate = () => {
       <hr />
       <div className="d-flex flex-column text-center">
         <div className="d-flex justify-content-center flex-column gap-3">
-          <label>Number of Attendees:</label>
+          <label>Number of Attendees</label>
           <input
             type="number"
             min="1"
@@ -30,7 +30,7 @@ const BookDate = () => {
 
           <div className="d-flex gap-2">
             <div className="flex-grow-1">
-              <label>Select Date:</label>
+              <label>Select Date</label>
               <DatePicker
                 selected={selectedDate}
                 onChange={(date) => date && setSelectedDate(date)}
@@ -41,7 +41,7 @@ const BookDate = () => {
             </div>
 
             <div className="flex-grow-1">
-              <label>Select Time:</label>
+              <label>Select Time</label>
               <DatePicker
                 selected={selectedTime}
                 onChange={(time) => time && setSelectedTime(time)}
