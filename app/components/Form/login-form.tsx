@@ -1,5 +1,5 @@
 "use client";
-import { Button, Form, FormGroup, FormLabel, FormControl, Row, Col } from "react-bootstrap";
+import { Button, Form, FormGroup, FormLabel, FormControl } from "react-bootstrap";
 
 const LoginForm = () => {
   return (
