@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "backend": "json-server-auth backend/db.json --watch --port 5005"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",

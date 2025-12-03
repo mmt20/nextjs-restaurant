@@ -23,8 +23,12 @@ const Navbar = () => {
 
         <div>
           <BsFillBrightnessHighFill onClick={toggleTheme} className={lang} />
-          <button className={`${btn} ${btnLogin}`}>login</button>
-          <button className={`${btn} ${btnRegister}`}>signup</button>
+          <Link href="login">
+            <button className={`${btn} ${btnLogin}`}>login</button>
+          </Link>
+          <Link href="signup">
+            <button className={`${btn} ${btnRegister}`}>signup</button>
+          </Link>
         </div>
       </div>
     </nav>

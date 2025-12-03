@@ -5,6 +5,7 @@ import Navbar from "./common/nav-bar/nav-bar";
 
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 import DarkMode from "./utils/dark-mode";
 import Footer from "./common/footer/footer";
 
@@ -28,7 +29,7 @@ export default function RootLayout({
       <body className={lato.variable} suppressHydrationWarning>
         <DarkMode>
           <Navbar />
-          {children}
+          <main>{children}</main>
           <Footer />
         </DarkMode>
       </body>
