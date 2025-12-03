@@ -1,18 +1,14 @@
-"use client";
 import { IoMdRestaurant } from "react-icons/io";
-import { BsFillBrightnessHighFill } from "react-icons/bs";
-import { useTheme } from "next-themes";
+import { auth, signOut } from "@/auth";
 
 import styles from "./nav-bar.module.css";
 import Link from "next/link";
+import ThemeToggle from "./theme-toggle";
 
 const { navBar, lang, logo, btn, btnLogin, btnRegister } = styles;
 
-const Navbar = () => {
-  const { theme, setTheme } = useTheme();
-  const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
-  };
+const Navbar = async () => {
+  const session = await auth();
 
   return (
     <nav className={`${navBar} w-100`}>
@@ -22,13 +18,29 @@ const Navbar = () => {
         </Link>
 
         <div>
-          <BsFillBrightnessHighFill onClick={toggleTheme} className={lang} />
-          <Link href="login">
-            <button className={`${btn} ${btnLogin}`}>login</button>
-          </Link>
-          <Link href="signup">
-            <button className={`${btn} ${btnRegister}`}>signup</button>
-          </Link>
+          <ThemeToggle className={lang} />
+          {session?.user ? (
+            <form
+              action={async () => {
+                "use server";
+                await signOut({ redirectTo: "/login" });
+              }}
+              style={{ display: "inline" }}
+            >
+              <button type="submit" className={`${btn} ${btnLogin}`}>
+                Logout
+              </button>
+            </form>
+          ) : (
+            <>
+              <Link href="/login">
+                <button className={`${btn} ${btnLogin}`}>login</button>
+              </Link>
+              <Link href="/signup">
+                <button className={`${btn} ${btnRegister}`}>signup</button>
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </nav>

@@ -28,9 +28,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={lato.variable} suppressHydrationWarning>
         <DarkMode>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
+          <div className="page-wrapper">
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </div>
         </DarkMode>
       </body>
     </html>

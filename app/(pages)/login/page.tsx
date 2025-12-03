@@ -1,4 +1,4 @@
-import LoginForm from "@/components/Form/login-form";
+import LoginForm from "@/app/components/Form/login-form";
 import { Col, Row } from "react-bootstrap";
 
 const Login = () => {

@@ -1,5 +1,5 @@
 "use client";
-import SingupForm from "@/components/Form/signup-form";
+import SingupForm from "@/app/components/Form/signup-form";
 import { Col, Row } from "react-bootstrap";
 const SingUp = () => {
   return (
