@@ -3,8 +3,8 @@ import SingupForm from "@/app/components/Form/signup-form";
 import { Col, Row } from "react-bootstrap";
 const SingUp = () => {
   return (
-    <Row className="container mt-5">
-      <Col md={{ span: 5, offset: 6 }}>
+    <Row className="container mt-5 d-flex justify-content-center">
+      <Col md={{ span: 5, offset: 1 }}>
         <h1 style={{ color: "var(--btn-color)" }}>SingUp Page</h1>
         <SingupForm />
       </Col>
