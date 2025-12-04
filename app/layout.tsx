@@ -8,6 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import DarkMode from "./utils/dark-mode";
 import Footer from "./common/footer/footer";
+import { Toaster } from "react-hot-toast";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({
             <main>{children}</main>
             <Footer />
           </div>
+          <Toaster position={"top-right"} />
         </DarkMode>
       </body>
     </html>
