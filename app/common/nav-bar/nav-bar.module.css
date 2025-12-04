@@ -2,8 +2,27 @@
   background-color: var(--primary-color);
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   height: 60px;
   z-index: 300;
+
+  /* ensures children vertically align nicely */
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  color: var(--logo-color);
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
 .lang {
@@ -11,40 +30,41 @@
   height: 30px;
   color: var(--lang-icon);
   cursor: pointer;
-}
-
-.logo {
-  width: 50px;
-  height: 50px;
-  margin: 10px;
-  color: var(--logo-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn {
-  margin-top: 8px !important;
-  color: var(--foreground);
-  border-radius: 5px;
-  padding: 2px !important;
-  margin-left: 10px !important;
-  margin-top: 10px !important;
+  border-radius: 6px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  transition: opacity 0.2s ease;
+
+  margin-left: 12px;
+}
+
+.btn:hover {
+  opacity: 0.85;
 }
 
 .btnLogin {
   background-color: var(--button-background);
   border: 1px solid var(--foreground);
-  cursor: pointer;
-  font-size: 20px;
-  padding: 4px !important;
+  color: var(--foreground);
+  font-size: 18px;
   border-radius: 8px;
-  color: white;
+  padding: 6px 16px;
 }
 
 .btnRegister {
-  border: none;
-  cursor: pointer;
-  color: var(--button-color);
   background-color: transparent;
-  font-size: 20px;
+  color: var(--button-color);
+  font-size: 18px;
 }
 
 .btnOrder {

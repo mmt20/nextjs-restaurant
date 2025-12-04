@@ -29,6 +29,7 @@ const LoginForm = () => {
         toast.success(data.message);
       }
       router.replace("/");
+      router.refresh(); // Force server components to re-fetch session data
     },
     onError: (error) => {
       if (error?.error) {
