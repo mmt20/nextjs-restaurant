@@ -13,6 +13,13 @@
       "firstName": "ali",
       "lastName": "ahmed",
       "id": 2
+    },
+    {
+      "email": "karem@gmail.com",
+      "password": "$2a$10$Q40fWXedY2h9XfGOMpwafuUaQfBoTgZZG8oDgmjF9lHh1QPuik98e",
+      "firstName": "karem",
+      "lastName": "karem",
+      "id": 3
     }
   ]
 }

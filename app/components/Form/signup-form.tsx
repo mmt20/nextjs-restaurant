@@ -6,10 +6,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { signUpSchema, signUpType } from "@/app/validations/signUpSchema";
 import { useActionState, useTransition } from "react";
 import { signUpAction } from "@/app/actions/singup-actiom";
+import toast from "react-hot-toast";
+import { withCallbacks } from "@/app/utils/with-callback.util";
+import { useRouter } from "next/navigation";
 
-const SingupForm = () => {
+const SignupForm = () => {
   const [isPending, startTransition] = useTransition();
-  const [, formAction] = useActionState(signUpAction, { success: "" });
+  const router = useRouter();
 
   const {
     register,
@@ -19,11 +22,29 @@ const SingupForm = () => {
     mode: "onBlur",
     resolver: zodResolver(signUpSchema),
   });
+
+  const signupSubmit = withCallbacks(signUpAction, {
+    onSuccess: (data) => {
+      if (data?.message) {
+        toast.success(data.message);
+      }
+      router.replace("/");
+    },
+    onError: (error) => {
+      if (error?.error) {
+        toast.error(error.error);
+      }
+    },
+  });
+
+  const [, formAction] = useActionState(signupSubmit, { error: "" });
+
   const submitForm: SubmitHandler<signUpType> = (data) => {
     startTransition(() => {
       formAction(data);
     });
   };
+
   return (
     <Form onSubmit={handleSubmit(submitForm)} className="container mt-4 mb-5">
       <FormInput label="First Name" name="firstName" register={register} error={formErrors.firstName?.message} />
@@ -45,10 +66,10 @@ const SingupForm = () => {
       />
 
       <Button variant="danger" type="submit" style={{ color: "white" }} disabled={isPending || !isValid}>
-        SingUp
+        {isPending ? "Creating Account..." : "Sign Up"}
       </Button>
     </Form>
   );
 };
 
-export default SingupForm;
+export default SignupForm;

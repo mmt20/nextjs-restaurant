@@ -3,24 +3,26 @@
 import { loginType } from "@/app/validations/loginSchema";
 import { signIn } from "@/auth";
 import { AuthError } from "next-auth";
-import { redirect } from "next/navigation";
 
 export async function loginAction(
-  prevState: { error: string } | undefined,
+  prevState: { error?: string; message?: string } | undefined,
   formData: loginType
-): Promise<{ error: string }> {
+): Promise<{ error?: string; message?: string; succeeded?: boolean }> {
   try {
     await signIn("credentials", {
       email: formData.email,
       password: formData.password,
       redirect: false,
     });
+
+    return {
+      succeeded: true,
+      message: "Login successfully.",
+    };
   } catch (error) {
-    if (error instanceof AuthError) {
-      return { error: error.message || "Invalid credentials" };
+    if (error instanceof AuthError && error.type === "CredentialsSignin") {
+      return { error: "Invalid email or password" };
     }
     return { error: "Something went wrong" };
   }
-
-  redirect("/");
 }

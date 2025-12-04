@@ -6,10 +6,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema, loginType } from "@/app/validations/loginSchema";
 import { useActionState, useTransition } from "react";
 import { loginAction } from "@/app/actions/login-action";
+import toast from "react-hot-toast";
+import { withCallbacks } from "@/app/utils/with-callback.util";
+import { useRouter } from "next/navigation";
 
 const LoginForm = () => {
   const [isPending, startTransition] = useTransition();
-  const [, formAction] = useActionState(loginAction, { error: "" });
+  const router = useRouter();
 
   const {
     register,
@@ -19,6 +22,22 @@ const LoginForm = () => {
     mode: "onBlur",
     resolver: zodResolver(loginSchema),
   });
+
+  const loginSubmit = withCallbacks(loginAction, {
+    onSuccess: (data) => {
+      if (data?.message) {
+        toast.success(data.message);
+      }
+      router.replace("/");
+    },
+    onError: (error) => {
+      if (error?.error) {
+        toast.error(error.error);
+      }
+    },
+  });
+
+  const [, formAction] = useActionState(loginSubmit, { error: "" });
 
   const submitForm: SubmitHandler<loginType> = (data) => {
     startTransition(() => {
@@ -45,7 +64,7 @@ const LoginForm = () => {
       />
 
       <Button variant="danger" type="submit" style={{ color: "white" }} disabled={isPending || !isValid}>
-        Login
+        {isPending ? "Logging in..." : "Login"}
       </Button>
     </Form>
   );
